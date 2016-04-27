@@ -1,0 +1,41 @@
+{
+  "name": "react-select-uk",
+  "version": "1.0.0",
+  "description": "Dropdown element from uikit for react with fallback to native select",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NumminorihSF/react-select-uk.git"
+  },
+  "keywords": [
+    "reactjs",
+    "mobile",
+    "select",
+    "fallback",
+    "isomorph",
+    "server-render",
+    "uikit"
+  ],
+  "author": "Konstantine Petryaev <numminorihsf@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NumminorihSF/rreact-select-uk/issues"
+  },
+  "homepage": "https://github.com/NumminorihSF/react-select-uk#readme",
+  "peerDependencies": {
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1"
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.5.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
+  },
+  "dependencies": {
+    "react-select-fallback": "^1.0.0"
+  }
+}
