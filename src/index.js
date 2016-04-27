@@ -42,7 +42,7 @@ var UKSelect = React.createClass({
       <div className="uk-button-group">
         <button type="button"
                 className="uk-button"
-                onClick={this.triggerShow.bind(this)}>
+                onClick={this.triggerShow}>
           {this.props.defaultValue}
         </button>
         <div className={this.state.show ? "uk-open":""}>
