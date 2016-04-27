@@ -20,7 +20,7 @@ var UKSelect = React.createClass({
 
   onChange: function(val, e){
     (this.props.onChange || function(){})(val);
-    this.triggerMenu();
+    this.triggerShow();
     e.preventDefault();
     return false;
   },
