@@ -1,4 +1,4 @@
-react-dropdown-uk
+react-select-uk
 ============
 
 A `dropdown` control element (from [uikit](http://getuikit.com)) for [React](http://facebook.github.io/react/index.html) with fallback to native 
@@ -11,12 +11,12 @@ The easiest way to use this dropdown is to install it from NPM and include it in
 build process (using [Browserify](http://browserify.org), etc).
 
 ```sh
-npm install react-dropdown-uk --save
+npm install react-select-uk --save
 ```
 
 ## Usage
 
-react-dropdown-uk use custom uk-dropdown.
+react-select-uk use custom uk-dropdown.
 
 On server rendering it will return html `select` element for capability with disabled js.
 
@@ -24,7 +24,7 @@ Also by default, if user use touch-device, it will use html `select` just becaus
    
 ```javascript
 
-var UKSelect = require('react-dropdown-uk');
+var UKSelect = require('react-select-uk');
 
 <div>
   <UKSelect value={1} options={[
