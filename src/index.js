@@ -20,22 +20,29 @@ var UKSelect = React.createClass({
     };
   },
 
+  clickListener: function(e){
+    if (this.state.show && e.target !== this.refs.button){
+      this.setState({show: false});
+    }
+  },
   componentDidMount: function(){
-    var self = this;
     if (typeof document !== 'undefined'){
       if (document.addEventListener) {
-        document.addEventListener('click', function(e){
-          if (self.state.show && e.target !== self){
-            self.setState({show: false});
-          }
-        });
+        document.addEventListener('click', this.clickListener.bind(this));
       }
       else if (document.attachEvent) {
-        document.attachEvent('onclick', function(e){
-          if (self.state.show && e.target !== self){
-            self.setState({show: false});
-          }
-        });
+        document.attachEvent('onclick', this.clickListener.bind(this));
+      }
+    }
+  },
+
+  componentWillUnmount: function(){
+    if (typeof document !== 'undefined'){
+      if (document.addEventListener) {
+        document.removeEventListener('click', this.clickListener.bind(this));
+      }
+      else if (document.attachEvent) {
+        document.detachEvent('onclick', this.clickListener.bind(this));
       }
     }
   },
@@ -63,6 +70,7 @@ var UKSelect = React.createClass({
     return (<FSelect {...this.props}>
       <div className="uk-button-group">
         <button type="button"
+                ref="button"
                 className={'uk-button ' + this.props.classButton}
                 onClick={this.triggerShow}>
           {this.props.defaultValue}
