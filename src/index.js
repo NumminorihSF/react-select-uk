@@ -14,7 +14,9 @@ var UKSelect = React.createClass({
 
   getDefaultProps: function() {
     return {
-      options:[]
+      options:[],
+      classDropDown: '',
+      classButton: ''
     };
   },
 
@@ -41,12 +43,12 @@ var UKSelect = React.createClass({
     return (<FSelect {...this.props}>
       <div className="uk-button-group">
         <button type="button"
-                className="uk-button"
+                className={`uk-button ${this.props.classButton}`}
                 onClick={this.triggerShow}>
           {this.props.defaultValue}
         </button>
         <div className={this.state.show ? "uk-open":""}>
-          <div className="uk-dropdown uk-dropdown-small">
+          <div className={`uk-dropdown uk-dropdown-small ${this.prop.classDropDown}`}>
             <ul className="uk-nav uk-nav-dropdown">
               {list}
             </ul>

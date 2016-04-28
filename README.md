@@ -42,6 +42,8 @@ var UKSelect = require('react-select-uk');
 	Property	|	Type		|	Default		|	Description
 :-----------------------|:--------------|:--------------|:--------------------------------
 className | string | `''` | css class for html `select` element. also is passed to children 
+classDropDown | string | `''` | css class for uk-drop-down element 
+classButton | string | `''` | css class for uk-drop-down button 
 onChange  | function| `function(){}` | onChange listener 1st argument is an value of selected options
 options   | object[] | `[]` | array of object with fields `'name'` (displayed name of value), `'value'`
 autoFocus | boolean | `false` | html autofocus prop
