@@ -20,9 +20,29 @@ var UKSelect = React.createClass({
     };
   },
 
+  componentDidMount: function(){
+    var self = this;
+    if (typeof document !== 'undefined'){
+      if (document.addEventListener) {
+        document.addEventListener('click', function(){
+          if (self.state.show){
+            self.setState({show: false});
+          }
+        });
+      }
+      else if (document.attachEvent) {
+        document.attachEvent('onclick', function(){
+          if (self.state.show){
+            self.setState({show: false});
+          }
+        });
+      }
+    }
+  },
+
   onChange: function(val, e){
     (this.props.onChange || function(){})(val);
-    this.triggerShow();
+    this.setState({show: false});
     e.preventDefault();
     return false;
   },
@@ -48,8 +68,8 @@ var UKSelect = React.createClass({
           {this.props.defaultValue}
         </button>
         <div className={this.state.show ? "uk-open":""}>
-          <div className={'uk-dropdown uk-dropdown-small ' + this.prop.classDropDown}>
-            <ul className="uk-nav uk-nav-dropdown">
+          <div className="uk-dropdown uk-dropdown-small">
+            <ul className={'uk-nav uk-nav-dropdown ' + this.props.classDropDown}>
               {list}
             </ul>
           </div>
