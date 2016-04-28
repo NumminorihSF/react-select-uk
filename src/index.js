@@ -24,15 +24,15 @@ var UKSelect = React.createClass({
     var self = this;
     if (typeof document !== 'undefined'){
       if (document.addEventListener) {
-        document.addEventListener('click', function(){
-          if (self.state.show){
+        document.addEventListener('click', function(e){
+          if (self.state.show && e.target !== self){
             self.setState({show: false});
           }
         });
       }
       else if (document.attachEvent) {
-        document.attachEvent('onclick', function(){
-          if (self.state.show){
+        document.attachEvent('onclick', function(e){
+          if (self.state.show && e.target !== self){
             self.setState({show: false});
           }
         });
