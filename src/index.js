@@ -62,7 +62,7 @@ var UKSelect = React.createClass({
     var self = this;
     var list = this.props.options.map(function(opt, i) {
       return (<li key={i}>
-        <a href="#" onClick={self.onChange.bind(self, opt.value)}>
+        <a href="#" onClick={function(e){self.onChange(opt.value, e)}}>
           {opt.name || opt.value}
         </a>
       </li>);
