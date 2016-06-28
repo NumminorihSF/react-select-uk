@@ -76,7 +76,7 @@ var UKSelect = React.createClass({
           {this.props.defaultValue}
         </button>
         <div className={this.state.show ? "uk-open":""}>
-          <div className="uk-dropdown uk-dropdown-small">
+          <div className={"uk-dropdown uk-dropdown-small " + this.props.classWrapDropDown}>
             <ul className={'uk-nav uk-nav-dropdown ' + this.props.classDropDown}>
               {list}
             </ul>
